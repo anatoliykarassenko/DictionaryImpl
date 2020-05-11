@@ -1,7 +1,7 @@
-/*Условие задачи
-Необходимо реализовать класс контейнера, реализующий интерфейс Dictionary и способный выбросить
-исключение, реализующее интерфейс NotFoundException.
-При разработке допускается использовать STL. Кроме этого, внутренняя реализация ничем не ограничена.
+/*Requirement
+You must implement a container class that implements the dictionary interface 
+and can throw an exception that implements the NotFoundException interface.
+When developing, you can use STL. In addition, the internal implementation is unlimited.
 */
 #include <exception>
 #include <unordered_map>
@@ -26,7 +26,7 @@ public:
     virtual const TKey& GetKey() const noexcept = 0;
 };
 
-//                         Реализация исключения
+//                         Exception realisation
 
 template<class TKey>
 class NotFoundExceptionImpl final : public NotFoundException<TKey>
@@ -46,7 +46,7 @@ class NotFoundExceptionImpl final : public NotFoundException<TKey>
         TKey _key;
 };
 
-//                          Реализация словаря
+//                          Dictionary realisation
 
 template<class TKey, class TValue>
 class DictionaryImpl : public Dictionary<TKey, TValue>
